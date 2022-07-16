@@ -3,6 +3,6 @@ import { LessonService } from './lesson.service';
 import { LessonResolver } from './lesson.resolver';
 
 @Module({
-  providers: [LessonResolver, LessonService]
+  providers: [LessonResolver, LessonService],
 })
 export class LessonModule {}
