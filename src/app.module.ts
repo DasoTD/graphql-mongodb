@@ -14,7 +14,7 @@ import { Lesson } from './lesson/entities/lesson.entity';
     LessonModule,
     TypeOrmModule.forRoot({
       type: 'mongodb',
-      url: 'mongodb+srv://david:david@cluster0.ibktv.mongodb.net/?retryWrites=true&w=majority',
+      url: 'mongodb://localhost/school',//'mongodb+srv://david:david@cluster0.ibktv.mongodb.net/?retryWrites=true&w=majority',
       synchronize: true,
       useNewUrlParser: true,
       useUnifiedTopology: true,

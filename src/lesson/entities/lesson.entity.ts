@@ -11,7 +11,11 @@ export class Lesson {
 
   @ObjectIdColumn()
   _id: string
-  @PrimaryGeneratedColumn('uuid')
+
+
+  @PrimaryColumn()
+  @Column()
+  @Field()
   id: string;
 
   @Field()

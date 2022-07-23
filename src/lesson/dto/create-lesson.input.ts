@@ -8,13 +8,16 @@ export class CreateLessonInput {
 
   @IsString()
   @IsNotEmpty()
+  @Field()
   name: string
 
   @IsString()
   @IsNotEmpty()
+  @Field()
   startDate: string
 
   @IsString()
   @IsNotEmpty()
+  @Field()
   endDate: string
 }

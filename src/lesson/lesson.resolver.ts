@@ -10,9 +10,12 @@ export class LessonResolver {
 
   @Mutation(() => Lesson)
   createLesson(
-    @Args('createLessonInput') createLessonInput: CreateLessonInput,
-  ) {
-    return this.lessonService.create(createLessonInput);
+    //@Args('createLessonInput') createLessonInput: CreateLessonInput,
+    @Args('name') name: string,
+    @Args('startDate') startDate: string,
+    @Args('endDate') endDate: string
+  ): Promise<Lesson> {
+    return this.lessonService.create(name, startDate, endDate);
   }
 
   @Query(() => Lesson, { name: 'lesson' })
@@ -30,10 +33,10 @@ export class LessonResolver {
   //   return this.lessonService.findAll();
   // }
 
-  // @Query(() => Lesson, { name: 'lesson' })
-  // findOne(@Args('id', { type: () => Int }) id: number) {
-  //   return this.lessonService.findOne(id);
-  // }
+  @Query(() => Lesson, { name: 'lesson' })
+  findOne(@Args('id', { type: () => String }) id: string) {
+    return this.lessonService.findOne(id);
+  }
 
   @Mutation(() => Lesson)
   updateLesson(
