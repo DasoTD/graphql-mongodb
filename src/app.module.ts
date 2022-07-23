@@ -4,6 +4,7 @@ import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 import { LessonModule } from './lesson/lesson.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Lesson } from './lesson/entities/lesson.entity';
+import { StudentModule } from './student/student.module';
 
 @Module({
   imports: [
@@ -19,7 +20,8 @@ import { Lesson } from './lesson/entities/lesson.entity';
       useNewUrlParser: true,
       useUnifiedTopology: true,
       entities: [ Lesson]
-    })
+    }),
+    StudentModule
   ],
   controllers: [], //codeFirst
   providers: [],
