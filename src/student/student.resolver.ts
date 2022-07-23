@@ -19,8 +19,8 @@ export class StudentResolver {
   }
 
   @Query(() => Student, { name: 'student' })
-  findOne(@Args('id', { type: () => Int }) id: number) {
-    return this.studentService.findOne(id);
+  findOne(@Args('id', { type: () => String }) id: string) {
+    return this.studentService.getStudent(id);
   }
 
   @Mutation(() => Student)

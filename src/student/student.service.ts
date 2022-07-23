@@ -28,8 +28,12 @@ export class StudentService {
     return this.studentRepository.find();// `This action returns all student`;
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} student`;
+  async getStudent(id: string): Promise<Student> {
+    return await this.studentRepository.findOne({ 
+      where: {
+        id
+      }
+    }) ;// `This action returns a #${id} student`;
   }
 
   update(id: number, updateStudentInput: UpdateStudentInput) {
