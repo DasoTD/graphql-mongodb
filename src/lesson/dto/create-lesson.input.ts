@@ -1,23 +1,22 @@
 import { InputType, Int, Field } from '@nestjs/graphql';
-import { IsNotEmpty, IsString } from 'class-validator';
+import { IsDateString, IsNotEmpty, IsString } from 'class-validator';
 
 @InputType()
 export class CreateLessonInput {
-  @Field(() => Int, { description: 'Example field (placeholder)' })
-  exampleField: number;
+  // @Field(() => Int, { description: 'Example field (placeholder)' })
+  // exampleField: number;
 
   @IsString()
   @IsNotEmpty()
   @Field()
-  name: string
+  name: string;
 
-  @IsString()
+  @IsDateString()
+  @Field()
+  startDate: string;
+
+  @IsDateString()
   @IsNotEmpty()
   @Field()
-  startDate: string
-
-  @IsString()
-  @IsNotEmpty()
-  @Field()
-  endDate: string
+  endDate: string;
 }

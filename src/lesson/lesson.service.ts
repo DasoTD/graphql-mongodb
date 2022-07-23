@@ -14,8 +14,8 @@ export class LessonService {
   ){
 
   }
-  async create(name, startDate, endDate): Promise<Lesson> {
-    //const { name, startDate, endDate} = createLessonInput;
+  async create(createLessonInput: CreateLessonInput ): Promise<Lesson> {
+    const { name, startDate, endDate} = createLessonInput;
     const lesson =  this.lessonRepository.create({
       id: uuid(),
       name,
@@ -28,8 +28,8 @@ export class LessonService {
     return lesson;
   }
 
-  findAll() {
-    return `This action returns all lesson`;
+  getLessons() {
+    return this.lessonRepository.find();// `This action returns all lesson`;
   }
 
   async findOne(id: string) {
