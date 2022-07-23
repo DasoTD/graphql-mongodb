@@ -13,9 +13,9 @@ export class StudentResolver {
     return this.studentService.create(createStudentInput);
   }
 
-  @Query(() => [Student], { name: 'student' })
-  findAll() {
-    return this.studentService.findAll();
+  @Query(() => [Student])
+  getStudents() {
+    return this.studentService.getStudents();
   }
 
   @Query(() => Student, { name: 'student' })

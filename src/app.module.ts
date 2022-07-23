@@ -5,6 +5,7 @@ import { LessonModule } from './lesson/lesson.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Lesson } from './lesson/entities/lesson.entity';
 import { StudentModule } from './student/student.module';
+import { Student } from './student/entities/student.entity';
 
 @Module({
   imports: [
@@ -19,7 +20,7 @@ import { StudentModule } from './student/student.module';
       synchronize: true,
       useNewUrlParser: true,
       useUnifiedTopology: true,
-      entities: [ Lesson]
+      entities: [ Lesson, Student]
     }),
     StudentModule
   ],

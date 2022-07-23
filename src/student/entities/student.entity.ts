@@ -1,4 +1,4 @@
-import { ObjectType, Field, Int } from '@nestjs/graphql';
+import { ObjectType, Field, Int, ID } from '@nestjs/graphql';
 import { Column, Entity, ObjectIdColumn, PrimaryColumn } from 'typeorm';
 
 @ObjectType()
@@ -6,7 +6,7 @@ import { Column, Entity, ObjectIdColumn, PrimaryColumn } from 'typeorm';
 export class Student {
   // @Field(() => Int, { description: 'Example field (placeholder)' })
   // exampleField: number;
-  
+  @Field(type => ID)
   @ObjectIdColumn()
   _id: string;
 
